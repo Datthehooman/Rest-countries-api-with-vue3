@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+:root {
+  --main-txt-size: 14px;
+  --primary-txt-size: 16px;
+  --h2-size: 18px;
+
+  font-family: "Nunito Sans", sans-serif;
+  font-size: var(--main-txt-size);
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 1rem;
+  height: 50px;
+  gap: 1rem;
+  border-radius: 5px;
+  transition: var(--fade-transition);
+  &__input {
+    color: var(--main-txt-color);
+    width: 100%;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    height: 100%;
+  }
+  &--small {
+    width: 200px;
+  }
+  @media screen and (min-width: 600px) {
+    &--large {
+      max-width: 600px;
+    }
+    &--small {
+      width: 250px;
+    }
+  }
+}
+
+.container {
+  padding: 1rem;
+}
+
+.rounded {
+  border-radius: 2rem;
+}
+
+.rotate-transition {
+  transition: transform 0.1s ease-out;
+  &--active {
+    transform: rotate(180deg);
+  }
+}
+
+.list-move,
+.list-transition-enter-active,
+.list-transition-leave-active {
+  transition: opacity 0.1s ease;
+}
+
+.list-transition-enter-from,
+.list-transition-leave-to {
+  opacity: 0;
+}
+
+.list-leave-action {
+  position: absolute;
+}
+
+.fade-transition-enter-active,
+.fade-transition-leave-active {
+  transition: opacity 0.1s ease;
+}
+
+.fade-transition-enter-from,
+.fade-transition-leave-to {
+  opacity: 0;
+}
+
+@keyframes fade-show {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-show {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@for $i from 1 through 5 {
+  .elevation-#{$i} {
+    box-shadow: #{$i}px #{$i}px #{$i * 3}px rgba(0, 0, 0, 0.2);
+  }
+}
